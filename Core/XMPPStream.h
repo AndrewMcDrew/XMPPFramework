@@ -2,6 +2,7 @@
 #import "XMPPSASLAuthentication.h"
 #import "XMPPCustomBinding.h"
 #import "GCDAsyncSocket.h"
+#import "LMGCDAsyncSocketMiddleware.h"
 #import "GCDMulticastDelegate.h"
 
 #if TARGET_OS_IPHONE
@@ -45,7 +46,7 @@ typedef NS_ENUM(NSUInteger, XMPPStreamStartTLSPolicy) {
 
 extern const NSTimeInterval XMPPStreamTimeoutNone;
 
-@interface XMPPStream : NSObject <GCDAsyncSocketDelegate>
+@interface XMPPStream : NSObject <LMGCDAsyncSocketMiddlewareDelegate>
 
 /**
  * Standard XMPP initialization.
